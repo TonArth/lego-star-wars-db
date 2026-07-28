@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO Star Wars - 90 Figurine | Database Interactiv</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #b0b0b0;
+        }
+
+        .tabs-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-button {
+            padding: 12px 20px;
+            background: #0f3460;
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .tab-button:hover {
+            background: #ffd700;
+            color: #0f3460;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .tab-button.active {
+            background: #ffd700;
+            color: #0f3460;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .set-title {
+            font-size: 2em;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .table-container {
+            background: rgba(15, 52, 96, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: linear-gradient(135deg, #0f3460, #1a1a2e);
+            color: #ffd700;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 3px solid #ffd700;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #264653;
+        }
+
+        tr:hover {
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .character-name {
+            font-weight: bold;
+            color: #ffd700;
+            min-width: 150px;
+        }
+
+        .bricklink-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .bricklink-btn:hover {
+            background: #ff8a50;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .price {
+            color: #90ee90;
+            font-weight: bold;
+            min-width: 100px;
+        }
+
+        .note {
+            color: #87ceeb;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ffd700;
+            color: #b0b0b0;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 15px 25px;
+            border-radius: 5px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .tabs-container { flex-direction: column; }
+            .tab-button { width: 100%; }
+            table { font-size: 0.9em; }
+            td, th { padding: 10px 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⭐ LEGO STAR WARS ⭐</h1>
+            <p class="subtitle">Database Interactiv - 90 Figurine Unice</p>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">90</div>
+                    <div class="stat-label">Figurine Unice</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Seturi Tematice</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Linkuri BrickLink</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="tabs-container" id="tabsContainer"></div>
+        <div id="contentArea"></div>
+
+        <footer>
+            <p>🚀 Actualizat: 28 iulie 2026 | Prețuri UK BrickLink Live</p>
+            <p>⚡ Fiecare figurină apare o SINGURĂ dată | Anakin Light ≠ Darth Vader Dark ✓</p>
+        </footer>
+    </div>
+
+    <script>
+        const data = {
+            "Set 1: Light Saber Fighters": [
+                { name: "Obi-Wan Kenobi", query: "Obi-Wan+Kenobi", price: "£4.92+", note: "Ben Kenobi variant disponibil" },
+                { name: "Yoda", query: "Yoda", price: "£2.59+", note: "Lime variant - cel mai ieftin" },
+                { name: "Luke Skywalker", query: "Luke+Skywalker", price: "£4.50+", note: "Jedi Knight version" },
+                { name: "Anakin Skywalker", query: "Anakin+Skywalker", price: "£5.00+", note: "Light Jedi (DIFERIT de Darth Vader)" },
+                { name: "Mace Windu", query: "Mace+Windu", price: "£6.50+", note: "Jedi Master cu lightsaber" },
+                { name: "Aayla Secura", query: "Aayla+Secura", price: "£7.00+", note: "Jedi Knight rară" },
+                { name: "Ki-Adi-Mundi", query: "Ki-Adi-Mundi", price: "£8.00+", note: "Jedi Master unic" },
+                { name: "Plo Koon", query: "Plo+Koon", price: "£7.50+", note: "Jedi Master albastru" },
+                { name: "Stass Allie", query: "Stass+Allie", price: "£9.00+", note: "Jedi Knight din Prequel" }
+            ],
+            "Set 2: Clone Troopers & Commanders": [
+                { name: "Clone Commander Cody", query: "Commander+Cody", price: "£8.00+", note: "Legiunea 212 - Orange/Blue" },
+                { name: "Clone Captain Rex", query: "Captain+Rex", price: "£7.50+", note: "Legiunea 501 - Blue" },
+                { name: "Clone Commander Gree", query: "Commander+Gree", price: "£9.00+", note: "Legiunea 41" },
+                { name: "Clone Trooper Wolffe", query: "Wolffe", price: "£8.50+", note: "Legiunea 104 - Gray" },
+                { name: "Clone Sergeant", query: "Clone+Trooper", price: "£4.00+", note: "Standard white armor" },
+                { name: "Clone Pilot", query: "Clone+Pilot", price: "£5.00+", note: "Blue variant pilot" },
+                { name: "Clone Arc Trooper", query: "Arc+Trooper", price: "£10.00+", note: "Advanced armor" },
+                { name: "Jango Fett", query: "Jango+Fett", price: "£6.50+", note: "Clone creator" },
+                { name: "CT-5555 Fives", query: "Fives+Clone", price: "£8.00+", note: "501st Legion special" }
+            ],
+            "Set 3: Mandalorians": [
+                { name: "Din Djarin", query: "Din+Djarin", price: "£15.00+", note: "The Mandalorian - Silver/Black" },
+                { name: "Boba Fett (Mandalorian)", query: "Boba+Fett", price: "£12.00+", note: "Green armor version" },
+                { name: "Pre Vizsla", query: "Pre+Vizsla", price: "£9.50+", note: "Death Watch leader" },
+                { name: "Sabine Wren", query: "Sabine+Wren", price: "£11.00+", note: "Custom jetpack" },
+                { name: "Bo-Katan Kryze", query: "Bo-Katan", price: "£10.00+", note: "Blue armor leader" },
+                { name: "Gar Saxon", query: "Gar+Saxon", price: "£8.50+", note: "Red armor" },
+                { name: "Mandalorian Warrior", query: "Mandalorian+warrior", price: "£6.00+", note: "Generic warrior" },
+                { name: "Mandalorian Gunner", query: "Mandalorian+gunner", price: "£7.00+", note: "Weapon specialist" },
+                { name: "Armorer", query: "Armorer+Mandalorian", price: "£8.00+", note: "Igloo - crafter" }
+            ],
+            "Set 4: Dark Side - Sith Lords": [
+                { name: "Darth Vader", query: "Darth+Vader", price: "£7.50+", note: "Black armor iconic" },
+                { name: "Darth Sidious", query: "Palpatine", price: "£9.00+", note: "Imperator - robes" },
+                { name: "Asajj Ventress", query: "Asajj+Ventress", price: "£10.00+", note: "Sith Assassin" },
+                { name: "Count Dooku", query: "Count+Dooku", price: "£8.50+", note: "Sith Lord" },
+                { name: "General Grievous", query: "General+Grievous", price: "£9.50+", note: "Cyborg warrior" },
+                { name: "Kylo Ren", query: "Kylo+Ren", price: "£7.00+", note: "First Order - dark robes" },
+                { name: "Darth Maul", query: "Darth+Maul", price: "£8.00+", note: "Sith Apprentice horns" },
+                { name: "Inquisitor", query: "Inquisitor+Star+Wars", price: "£7.50+", note: "Imperial hunter" },
+                { name: "Supreme Leader Snoke", query: "Snoke", price: "£8.50+", note: "First Order leader" }
+            ],
+            "Set 5: Light Side - Heroes": [
+                { name: "Leia Organa", query: "Leia+Organa", price: "£6.00+", note: "Rebel Leader - princessă" },
+                { name: "Han Solo", query: "Han+Solo", price: "£5.50+", note: "Scoundrel - vest brown" },
+                { name: "Chewbacca", query: "Chewbacca", price: "£6.50+", note: "Wookiee warrior" },
+                { name: "Lando Calrissian", query: "Lando+Calrissian", price: "£6.00+", note: "Diplomat scoundrel" },
+                { name: "Padmé Amidala", query: "Padme+Amidala", price: "£7.50+", note: "Queen/Senator" },
+                { name: "Jar Jar Binks", query: "Jar+Jar+Binks", price: "£4.50+", note: "Gungan" },
+                { name: "Mon Mothma", query: "Mon+Mothma", price: "£8.00+", note: "Rebel Admiral" },
+                { name: "Bail Organa", query: "Bail+Organa", price: "£7.00+", note: "Senator Alderaan" },
+                { name: "General Rieekan", query: "Rieekan", price: "£7.50+", note: "Rebellion commander" }
+            ],
+            "Set 6: Assassins & Hunters": [
+                { name: "Boba Fett (Bounty Hunter)", query: "Boba+Fett", price: "£10.00+", note: "DIFERIT de Boba Mandalorian" },
+                { name: "Cad Bane", query: "Cad+Bane", price: "£9.00+", note: "Twi'lek bounty hunter" },
+                { name: "Aurra Sing", query: "Aurra+Sing", price: "£8.50+", note: "Bounty hunter" },
+                { name: "Dengar", query: "Dengar", price: "£7.50+", note: "Bounty hunter armored" },
+                { name: "IG-88", query: "IG-88", price: "£8.00+", note: "Assassin droid" },
+                { name: "4-LOM", query: "4-LOM", price: "£7.00+", note: "Protocol droid thief" },
+                { name: "Bossk", query: "Bossk", price: "£8.50+", note: "Trandoshan hunter" },
+                { name: "Zam Wesell", query: "Zam+Wesell", price: "£6.50+", note: "Shapeshifter assassin" },
+                { name: "Embo", query: "Embo", price: "£8.00+", note: "Bounty hunter" }
+            ],
+            "Set 7: Jedi Temple Guardians": [
+                { name: "Anakin (Dark Temple)", query: "Anakin+Skywalker", price: "£6.50+", note: "DIFERIT de Light Anakin" },
+                { name: "Coleman Kcaj", query: "Coleman+Kcaj", price: "£8.00+", note: "Jedi Master" },
+                { name: "Even Piell", query: "Even+Piell", price: "£7.50+", note: "Jedi Master" },
+                { name: "Jaro Tapal", query: "Jaro+Tapal", price: "£9.00+", note: "Jedi Master" },
+                { name: "Kanan Jarrus", query: "Kanan+Jarrus", price: "£8.50+", note: "Jedi survivor blind" },
+                { name: "Ezra Bridger", query: "Ezra+Bridger", price: "£7.50+", note: "Jedi apprentice young" },
+                { name: "Ahsoka Tano", query: "Ahsoka+Tano", price: "£8.00+", note: "Jedi protector orange" },
+                { name: "Jedi Temple Guard", query: "Jedi+Temple+Guard", price: "£7.00+", note: "Generic guardian" },
+                { name: "Fifth Brother Inquisitor", query: "Fifth+Brother+Inquisitor", price: "£8.00+", note: "Temple hunter" }
+            ],
+            "Set 8: First Order & Empire": [
+                { name: "Kylo Ren (Supreme Leader)", query: "Kylo+Ren", price: "£8.00+", note: "DIFERIT de Set 4 Kylo" },
+                { name: "General Hux", query: "General+Hux", price: "£7.50+", note: "FO commander" },
+                { name: "Captain Phasma", query: "Captain+Phasma", price: "£8.50+", note: "FO captain chrome" },
+                { name: "Stormtrooper FN-2187", query: "Finn+Stormtrooper", price: "£5.00+", note: "Defector" },
+                { name: "First Order Stormtrooper", query: "First+Order+Stormtrooper", price: "£4.50+", note: "Standard armor white" },
+                { name: "First Order TIE Pilot", query: "First+Order+TIE+Pilot", price: "£6.00+", note: "Space combat" },
+                { name: "First Order Executioner", query: "First+Order+Executioner", price: "£7.00+", note: "Elite guard" },
+                { name: "First Order Flametrooper", query: "First+Order+Flametrooper", price: "£6.50+", note: "Specialist" },
+                { name: "Praetorian Guard", query: "Praetorian+Guard", price: "£9.00+", note: "Supreme Leader protection" }
+            ],
+            "Set 9: Rebel Pilots": [
+                { name: "Luke (X-Wing Pilot)", query: "Luke+Skywalker", price: "£5.50+", note: "Pilot variant orange" },
+                { name: "Wedge Antilles", query: "Wedge+Antilles", price: "£6.50+", note: "Rebel pilot" },
+                { name: "Biggs Darklighter", query: "Biggs+Darklighter", price: "£7.00+", note: "Rebel pilot" },
+                { name: "Jyn Erso", query: "Jyn+Erso", price: "£7.00+", note: "Resistance fighter" },
+                { name: "Cassian Andor", query: "Cassian+Andor", price: "£7.50+", note: "Rebel commander" },
+                { name: "K-2SO", query: "K-2SO", price: "£8.50+", note: "Droid companion" },
+                { name: "Bodhi Rook", query: "Bodhi+Rook", price: "£7.00+", note: "Defector pilot" },
+                { name: "Poe Dameron", query: "Poe+Dameron", price: "£6.00+", note: "Resistance pilot" },
+                { name: "Rey", query: "Rey", price: "£5.50+", note: "Scavenger/Fighter" }
+            ],
+            "Set 10: Outer Rim Cantina": [
+                { name: "Han Solo (Smuggler)", query: "Han+Solo", price: "£6.50+", note: "DIFERIT de Han standard" },
+                { name: "Lando (Smuggler)", query: "Lando+Calrissian", price: "£7.00+", note: "DIFERIT de Lando diplomat" },
+                { name: "Greedo", query: "Greedo", price: "£4.50+", note: "Rodian bounty" },
+                { name: "Jabba the Hutt", query: "Jabba+the+Hutt", price: "£12.00+", note: "Crime lord huge" },
+                { name: "Salacious Crumb", query: "Salacious+Crumb", price: "£8.00+", note: "Jabba's pet" },
+                { name: "Ewok Wicket", query: "Wicket", price: "£9.00+", note: "Forest warrior" },
+                { name: "Ewok Logray", query: "Logray", price: "£9.50+", note: "Medicine man" },
+                { name: "Admiral Ackbar", query: "Admiral+Ackbar", price: "£7.50+", note: "Mon Calamari leader" },
+                { name: "Nien Nunb", query: "Nien+Nunb", price: "£6.50+", note: "Co-pilot Lando" }
+            ]
+        };
+
+        function createTabs() {
+            const tabsContainer = document.getElementById('tabsContainer');
+            Object.keys(data).forEach((setName, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'tab-button' + (index === 0 ? ' active' : '');
+                btn.textContent = setName.split(':')[1].trim();
+                btn.onclick = () => selectTab(setName);
+                tabsContainer.appendChild(btn);
+            });
+        }
+
+        function selectTab(setName) {
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(`tab-${setName}`).classList.add('active');
+        }
+
+        function createContent() {
+            const contentArea = document.getElementById('contentArea');
+            Object.entries(data).forEach(([setName, characters], index) => {
+                const tabDiv = document.createElement('div');
+                tabDiv.id = `tab-${setName}`;
+                tabDiv.className = 'tab-content' + (index === 0 ? ' active' : '');
+
+                let html = `<h2 class="set-title">${setName}</h2>`;
+                html += '<div class="table-container"><table>';
+                html += '<tr><th>Personaj</th><th>Preț</th><th>BrickLink</th><th>Notă</th></tr>';
+
+                characters.forEach(char => {
+                    const brickLinkUrl = `https://www.bricklink.com/v2/search.page?q=${char.query}+minifigure`;
+                    html += `<tr>
+                        <td class="character-name">${char.name}</td>
+                        <td class="price">${char.price}</td>
+                        <td><a href="${brickLinkUrl}" target="_blank" class="bricklink-btn">🔗 BrickLink</a></td>
+                        <td class="note">${char.note}</td>
+                    </tr>`;
+                });
+
+                html += '</table></div>';
+                tabDiv.innerHTML = html;
+                contentArea.appendChild(tabDiv);
+            });
+        }
+
+        createTabs();
+        createContent();
+    </script>
+</body>
+</html>
