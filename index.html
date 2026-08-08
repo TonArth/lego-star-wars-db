@@ -162,6 +162,13 @@
             min-width: 100px;
         }
 
+        .code {
+            color: #ff6b35;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            min-width: 70px;
+        }
+
         .note {
             color: #87ceeb;
             font-size: 0.9em;
@@ -245,114 +252,114 @@
     <script>
         const data = {
             "Set 1: Light Saber Fighters": [
-                { name: "Obi-Wan Kenobi", query: "Obi-Wan+Kenobi", price: "£4.92+", note: "Ben Kenobi variant disponibil" },
-                { name: "Yoda", query: "Yoda", price: "£2.59+", note: "Lime variant - cel mai ieftin" },
-                { name: "Luke Skywalker", query: "Luke+Skywalker", price: "£4.50+", note: "Jedi Knight version" },
-                { name: "Anakin Skywalker", query: "Anakin+Skywalker", price: "£5.00+", note: "Light Jedi (DIFERIT de Darth Vader)" },
-                { name: "Mace Windu", query: "Mace+Windu", price: "£6.50+", note: "Jedi Master cu lightsaber" },
-                { name: "Aayla Secura", query: "Aayla+Secura", price: "£7.00+", note: "Jedi Knight rară" },
-                { name: "Ki-Adi-Mundi", query: "Ki-Adi-Mundi", price: "£8.00+", note: "Jedi Master unic" },
-                { name: "Plo Koon", query: "Plo+Koon", price: "£7.50+", note: "Jedi Master albastru" },
-                { name: "Stass Allie", query: "Stass+Allie", price: "£9.00+", note: "Jedi Knight din Prequel" }
+                { name: "Obi-Wan Kenobi", query: "Obi-Wan+Kenobi", code: "sw1224", price: "£4.92+", note: "Ben Kenobi variant disponibil" },
+                { name: "Yoda", query: "Yoda", code: "sw0906", price: "£2.59+", note: "Lime variant - cel mai ieftin" },
+                { name: "Luke Skywalker", query: "Luke+Skywalker", code: "sw0207", price: "£4.50+", note: "Jedi Knight version" },
+                { name: "Anakin Skywalker", query: "Anakin+Skywalker", code: "sw0120", price: "£5.00+", note: "Light Jedi (DIFERIT de Darth Vader)" },
+                { name: "Mace Windu", query: "Mace+Windu", code: "sw0133", price: "£6.50+", note: "Jedi Master cu lightsaber" },
+                { name: "Aayla Secura", query: "Aayla+Secura", code: "sw0284", price: "£7.00+", note: "Jedi Knight rară" },
+                { name: "Ki-Adi-Mundi", query: "Ki-Adi-Mundi", code: "sw0319", price: "£8.00+", note: "Jedi Master unic" },
+                { name: "Plo Koon", query: "Plo+Koon", code: "sw0198", price: "£7.50+", note: "Jedi Master albastru" },
+                { name: "Stass Allie", query: "Stass+Allie", code: "sw0469", price: "£9.00+", note: "Jedi Knight din Prequel" }
             ],
             "Set 2: Clone Troopers & Commanders": [
-                { name: "Clone Commander Cody", query: "Commander+Cody", price: "£8.00+", note: "Legiunea 212 - Orange/Blue" },
-                { name: "Clone Captain Rex", query: "Captain+Rex", price: "£7.50+", note: "Legiunea 501 - Blue" },
-                { name: "Clone Commander Gree", query: "Commander+Gree", price: "£9.00+", note: "Legiunea 41" },
-                { name: "Clone Trooper Wolffe", query: "Wolffe", price: "£8.50+", note: "Legiunea 104 - Gray" },
-                { name: "Clone Sergeant", query: "Clone+Trooper", price: "£4.00+", note: "Standard white armor" },
-                { name: "Clone Pilot", query: "Clone+Pilot", price: "£5.00+", note: "Blue variant pilot" },
-                { name: "Clone Arc Trooper", query: "Arc+Trooper", price: "£10.00+", note: "Advanced armor" },
-                { name: "Jango Fett", query: "Jango+Fett", price: "£6.50+", note: "Clone creator" },
-                { name: "CT-5555 Fives", query: "Fives+Clone", price: "£8.00+", note: "501st Legion special" }
+                { name: "Clone Commander Cody", query: "Commander+Cody", code: "sw0196", price: "£8.00+", note: "Legiunea 212 - Orange/Blue" },
+                { name: "Clone Captain Rex", query: "Captain+Rex", code: "sw0450", price: "£7.50+", note: "Legiunea 501 - Blue" },
+                { name: "Clone Commander Gree", query: "Commander+Gree", code: "sw0380", price: "£9.00+", note: "Legiunea 41" },
+                { name: "Clone Trooper Wolffe", query: "Wolffe", code: "sw0330", price: "£8.50+", note: "Legiunea 104 - Gray" },
+                { name: "Clone Sergeant", query: "Clone+Trooper", code: "sw0438", price: "£4.00+", note: "Standard white armor" },
+                { name: "Clone Pilot", query: "Clone+Pilot", code: "sw0266", price: "£5.00+", note: "Blue variant pilot" },
+                { name: "Clone Arc Trooper", query: "Arc+Trooper", code: "sw0377", price: "£10.00+", note: "Advanced armor" },
+                { name: "Jango Fett", query: "Jango+Fett", code: "sw0053", price: "£6.50+", note: "Clone creator" },
+                { name: "CT-5555 Fives", query: "Fives+Clone", code: "sw1329", price: "£8.00+", note: "501st Legion special" }
             ],
             "Set 3: Mandalorians": [
-                { name: "Din Djarin", query: "Din+Djarin", price: "£15.00+", note: "The Mandalorian - Silver/Black" },
-                { name: "Boba Fett (Mandalorian)", query: "Boba+Fett", price: "£12.00+", note: "Green armor version" },
-                { name: "Pre Vizsla", query: "Pre+Vizsla", price: "£9.50+", note: "Death Watch leader" },
-                { name: "Sabine Wren", query: "Sabine+Wren", price: "£11.00+", note: "Custom jetpack" },
-                { name: "Bo-Katan Kryze", query: "Bo-Katan", price: "£10.00+", note: "Blue armor leader" },
-                { name: "Gar Saxon", query: "Gar+Saxon", price: "£8.50+", note: "Red armor" },
-                { name: "Mandalorian Warrior", query: "Mandalorian+warrior", price: "£6.00+", note: "Generic warrior" },
-                { name: "Mandalorian Gunner", query: "Mandalorian+gunner", price: "£7.00+", note: "Weapon specialist" },
-                { name: "Armorer", query: "Armorer+Mandalorian", price: "£8.00+", note: "Igloo - crafter" }
+                { name: "Din Djarin", query: "Din+Djarin", code: "sw1135", price: "£15.00+", note: "The Mandalorian - Silver/Black" },
+                { name: "Boba Fett (Mandalorian)", query: "Boba+Fett", code: "sw1158", price: "£12.00+", note: "Green armor version" },
+                { name: "Pre Vizsla", query: "Pre+Vizsla", code: "sw0416", price: "£9.50+", note: "Death Watch leader" },
+                { name: "Sabine Wren", query: "Sabine+Wren", code: "sw0616", price: "£11.00+", note: "Custom jetpack" },
+                { name: "Bo-Katan Kryze", query: "Bo-Katan", code: "sw1163", price: "£10.00+", note: "Blue armor leader" },
+                { name: "Gar Saxon", query: "Gar+Saxon", code: "sw1162", price: "£8.50+", note: "Red armor" },
+                { name: "Mandalorian Warrior", query: "Mandalorian+warrior", code: "sw1345", price: "£6.00+", note: "Generic warrior" },
+                { name: "Mandalorian Gunner", query: "Mandalorian+gunner", code: "sw0494", price: "£7.00+", note: "Weapon specialist (cod aproximativ - Super Commando)" },
+                { name: "Armorer", query: "Armorer+Mandalorian", code: "sw1171", price: "£8.00+", note: "Igloo - crafter" }
             ],
             "Set 4: Dark Side - Sith Lords": [
-                { name: "Darth Vader", query: "Darth+Vader", price: "£7.50+", note: "Black armor iconic" },
-                { name: "Darth Sidious", query: "Palpatine", price: "£9.00+", note: "Imperator - robes" },
-                { name: "Asajj Ventress", query: "Asajj+Ventress", price: "£10.00+", note: "Sith Assassin" },
-                { name: "Count Dooku", query: "Count+Dooku", price: "£8.50+", note: "Sith Lord" },
-                { name: "General Grievous", query: "General+Grievous", price: "£9.50+", note: "Cyborg warrior" },
-                { name: "Kylo Ren", query: "Kylo+Ren", price: "£7.00+", note: "First Order - dark robes" },
-                { name: "Darth Maul", query: "Darth+Maul", price: "£8.00+", note: "Sith Apprentice horns" },
-                { name: "Inquisitor", query: "Inquisitor+Star+Wars", price: "£7.50+", note: "Imperial hunter" },
-                { name: "Supreme Leader Snoke", query: "Snoke", price: "£8.50+", note: "First Order leader" }
+                { name: "Darth Vader", query: "Darth+Vader", code: "sw0209", price: "£7.50+", note: "Black armor iconic" },
+                { name: "Darth Sidious", query: "Palpatine", code: "sw0634", price: "£9.00+", note: "Imperator - robes" },
+                { name: "Asajj Ventress", query: "Asajj+Ventress", code: "sw0318", price: "£10.00+", note: "Sith Assassin" },
+                { name: "Count Dooku", query: "Count+Dooku", code: "sw0060", price: "£8.50+", note: "Sith Lord" },
+                { name: "General Grievous", query: "General+Grievous", code: "sw0134", price: "£9.50+", note: "Cyborg warrior" },
+                { name: "Kylo Ren", query: "Kylo+Ren", code: "sw0859", price: "£7.00+", note: "First Order - dark robes" },
+                { name: "Darth Maul", query: "Darth+Maul", code: "sw0323", price: "£8.00+", note: "Sith Apprentice horns" },
+                { name: "Inquisitor", query: "Inquisitor+Star+Wars", code: "sw0622", price: "£7.50+", note: "Imperial hunter (cod aproximativ - Grand Inquisitor)" },
+                { name: "Supreme Leader Snoke", query: "Snoke", code: "sw0856", price: "£8.50+", note: "First Order leader" }
             ],
             "Set 5: Light Side - Heroes": [
-                { name: "Leia Organa", query: "Leia+Organa", price: "£6.00+", note: "Rebel Leader - princessă" },
-                { name: "Han Solo", query: "Han+Solo", price: "£5.50+", note: "Scoundrel - vest brown" },
-                { name: "Chewbacca", query: "Chewbacca", price: "£6.50+", note: "Wookiee warrior" },
-                { name: "Lando Calrissian", query: "Lando+Calrissian", price: "£6.00+", note: "Diplomat scoundrel" },
-                { name: "Padmé Amidala", query: "Padme+Amidala", price: "£7.50+", note: "Queen/Senator" },
-                { name: "Jar Jar Binks", query: "Jar+Jar+Binks", price: "£4.50+", note: "Gungan" },
-                { name: "Mon Mothma", query: "Mon+Mothma", price: "£8.00+", note: "Rebel Admiral" },
-                { name: "Bail Organa", query: "Bail+Organa", price: "£7.00+", note: "Senator Alderaan" },
-                { name: "General Rieekan", query: "Rieekan", price: "£7.50+", note: "Rebellion commander" }
+                { name: "Leia Organa", query: "Leia+Organa", code: "sw0026", price: "£6.00+", note: "Rebel Leader - princessă" },
+                { name: "Han Solo", query: "Han+Solo", code: "sw0045", price: "£5.50+", note: "Scoundrel - vest brown" },
+                { name: "Chewbacca", query: "Chewbacca", code: "sw0011", price: "£6.50+", note: "Wookiee warrior" },
+                { name: "Lando Calrissian", query: "Lando+Calrissian", code: "sw0105", price: "£6.00+", note: "Diplomat scoundrel" },
+                { name: "Padmé Amidala", query: "Padme+Amidala", code: "sw0411", price: "£7.50+", note: "Queen/Senator" },
+                { name: "Jar Jar Binks", query: "Jar+Jar+Binks", code: "sw0017", price: "£4.50+", note: "Gungan" },
+                { name: "Mon Mothma", query: "Mon+Mothma", code: "sw0249", price: "£8.00+", note: "Rebel Admiral" },
+                { name: "Bail Organa", query: "Bail+Organa", code: "sw1037", price: "£7.00+", note: "Senator Alderaan" },
+                { name: "General Rieekan", query: "Rieekan", code: "sw0460", price: "£7.50+", note: "Rebellion commander" }
             ],
             "Set 6: Assassins & Hunters": [
-                { name: "Boba Fett (Bounty Hunter)", query: "Boba+Fett", price: "£10.00+", note: "DIFERIT de Boba Mandalorian" },
-                { name: "Cad Bane", query: "Cad+Bane", price: "£9.00+", note: "Twi'lek bounty hunter" },
-                { name: "Aurra Sing", query: "Aurra+Sing", price: "£8.50+", note: "Bounty hunter" },
-                { name: "Dengar", query: "Dengar", price: "£7.50+", note: "Bounty hunter armored" },
-                { name: "IG-88", query: "IG-88", price: "£8.00+", note: "Assassin droid" },
-                { name: "4-LOM", query: "4-LOM", price: "£7.00+", note: "Protocol droid thief" },
-                { name: "Bossk", query: "Bossk", price: "£8.50+", note: "Trandoshan hunter" },
-                { name: "Zam Wesell", query: "Zam+Wesell", price: "£6.50+", note: "Shapeshifter assassin" },
-                { name: "Embo", query: "Embo", price: "£8.00+", note: "Bounty hunter" }
+                { name: "Boba Fett (Bounty Hunter)", query: "Boba+Fett", code: "sw0002", price: "£10.00+", note: "DIFERIT de Boba Mandalorian" },
+                { name: "Cad Bane", query: "Cad+Bane", code: "sw0285", price: "£9.00+", note: "Twi'lek bounty hunter" },
+                { name: "Aurra Sing", query: "Aurra+Sing", code: "sw0306", price: "£8.50+", note: "Bounty hunter" },
+                { name: "Dengar", query: "Dengar", code: "sw0149", price: "£7.50+", note: "Bounty hunter armored" },
+                { name: "IG-88", query: "IG-88", code: "sw0151", price: "£8.00+", note: "Assassin droid" },
+                { name: "4-LOM", query: "4-LOM", code: "sw0830", price: "£7.00+", note: "Protocol droid thief" },
+                { name: "Bossk", query: "Bossk", code: "sw0280", price: "£8.50+", note: "Trandoshan hunter" },
+                { name: "Zam Wesell", query: "Zam+Wesell", code: "sw0059", price: "£6.50+", note: "Shapeshifter assassin" },
+                { name: "Embo", query: "Embo", code: "sw0307", price: "£8.00+", note: "Bounty hunter" }
             ],
             "Set 7: Jedi Temple Guardians": [
-                { name: "Anakin (Dark Temple)", query: "Anakin+Skywalker", price: "£6.50+", note: "DIFERIT de Light Anakin" },
-                { name: "Coleman Kcaj", query: "Coleman+Kcaj", price: "£8.00+", note: "Jedi Master" },
-                { name: "Even Piell", query: "Even+Piell", price: "£7.50+", note: "Jedi Master" },
-                { name: "Jaro Tapal", query: "Jaro+Tapal", price: "£9.00+", note: "Jedi Master" },
-                { name: "Kanan Jarrus", query: "Kanan+Jarrus", price: "£8.50+", note: "Jedi survivor blind" },
-                { name: "Ezra Bridger", query: "Ezra+Bridger", price: "£7.50+", note: "Jedi apprentice young" },
-                { name: "Ahsoka Tano", query: "Ahsoka+Tano", price: "£8.00+", note: "Jedi protector orange" },
-                { name: "Jedi Temple Guard", query: "Jedi+Temple+Guard", price: "£7.00+", note: "Generic guardian" },
-                { name: "Fifth Brother Inquisitor", query: "Fifth+Brother+Inquisitor", price: "£8.00+", note: "Temple hunter" }
+                { name: "Anakin (Dark Temple)", query: "Anakin+Skywalker", code: "sw0419", price: "£6.50+", note: "DIFERIT de Light Anakin" },
+                { name: "Coleman Kcaj", query: "Coleman+Kcaj", code: null, price: "£8.00+", note: "Jedi Master (nu există figurină oficială BrickLink)" },
+                { name: "Even Piell", query: "Even+Piell", code: "sw0392", price: "£7.50+", note: "Jedi Master" },
+                { name: "Jaro Tapal", query: "Jaro+Tapal", code: null, price: "£9.00+", note: "Jedi Master (nu există figurină oficială BrickLink)" },
+                { name: "Kanan Jarrus", query: "Kanan+Jarrus", code: "sw0577", price: "£8.50+", note: "Jedi survivor blind" },
+                { name: "Ezra Bridger", query: "Ezra+Bridger", code: "sw0574", price: "£7.50+", note: "Jedi apprentice young" },
+                { name: "Ahsoka Tano", query: "Ahsoka+Tano", code: "sw0192", price: "£8.00+", note: "Jedi protector orange" },
+                { name: "Jedi Temple Guard", query: "Jedi+Temple+Guard", code: null, price: "£7.00+", note: "Generic guardian (nu există figurină oficială BrickLink)" },
+                { name: "Fifth Brother Inquisitor", query: "Fifth+Brother+Inquisitor", code: "sw0747", price: "£8.00+", note: "Temple hunter" }
             ],
             "Set 8: First Order & Empire": [
-                { name: "Kylo Ren (Supreme Leader)", query: "Kylo+Ren", price: "£8.00+", note: "DIFERIT de Set 4 Kylo" },
-                { name: "General Hux", query: "General+Hux", price: "£7.50+", note: "FO commander" },
-                { name: "Captain Phasma", query: "Captain+Phasma", price: "£8.50+", note: "FO captain chrome" },
-                { name: "Stormtrooper FN-2187", query: "Finn+Stormtrooper", price: "£5.00+", note: "Defector" },
-                { name: "First Order Stormtrooper", query: "First+Order+Stormtrooper", price: "£4.50+", note: "Standard armor white" },
-                { name: "First Order TIE Pilot", query: "First+Order+TIE+Pilot", price: "£6.00+", note: "Space combat" },
-                { name: "First Order Executioner", query: "First+Order+Executioner", price: "£7.00+", note: "Elite guard" },
-                { name: "First Order Flametrooper", query: "First+Order+Flametrooper", price: "£6.50+", note: "Specialist" },
-                { name: "Praetorian Guard", query: "Praetorian+Guard", price: "£9.00+", note: "Supreme Leader protection" }
+                { name: "Kylo Ren (Supreme Leader)", query: "Kylo+Ren", code: "sw1072", price: "£8.00+", note: "DIFERIT de Set 4 Kylo" },
+                { name: "General Hux", query: "General+Hux", code: "sw0662", price: "£7.50+", note: "FO commander" },
+                { name: "Captain Phasma", query: "Captain+Phasma", code: "sw0684", price: "£8.50+", note: "FO captain chrome" },
+                { name: "Stormtrooper FN-2187", query: "Finn+Stormtrooper", code: "sw0716", price: "£5.00+", note: "Defector" },
+                { name: "First Order Stormtrooper", query: "First+Order+Stormtrooper", code: "sw0667", price: "£4.50+", note: "Standard armor white" },
+                { name: "First Order TIE Pilot", query: "First+Order+TIE+Pilot", code: "sw0672", price: "£6.00+", note: "Space combat" },
+                { name: "First Order Executioner", query: "First+Order+Executioner", code: "sw0886", price: "£7.00+", note: "Elite guard" },
+                { name: "First Order Flametrooper", query: "First+Order+Flametrooper", code: "sw0666", price: "£6.50+", note: "Specialist" },
+                { name: "Praetorian Guard", query: "Praetorian+Guard", code: "sw0947", price: "£9.00+", note: "Supreme Leader protection" }
             ],
             "Set 9: Rebel Pilots": [
-                { name: "Luke (X-Wing Pilot)", query: "Luke+Skywalker", price: "£5.50+", note: "Pilot variant orange" },
-                { name: "Wedge Antilles", query: "Wedge+Antilles", price: "£6.50+", note: "Rebel pilot" },
-                { name: "Biggs Darklighter", query: "Biggs+Darklighter", price: "£7.00+", note: "Rebel pilot" },
-                { name: "Jyn Erso", query: "Jyn+Erso", price: "£7.00+", note: "Resistance fighter" },
-                { name: "Cassian Andor", query: "Cassian+Andor", price: "£7.50+", note: "Rebel commander" },
-                { name: "K-2SO", query: "K-2SO", price: "£8.50+", note: "Droid companion" },
-                { name: "Bodhi Rook", query: "Bodhi+Rook", price: "£7.00+", note: "Defector pilot" },
-                { name: "Poe Dameron", query: "Poe+Dameron", price: "£6.00+", note: "Resistance pilot" },
-                { name: "Rey", query: "Rey", price: "£5.50+", note: "Scavenger/Fighter" }
+                { name: "Luke (X-Wing Pilot)", query: "Luke+Skywalker", code: "sw0090", price: "£5.50+", note: "Pilot variant orange" },
+                { name: "Wedge Antilles", query: "Wedge+Antilles", code: "sw0089", price: "£6.50+", note: "Rebel pilot" },
+                { name: "Biggs Darklighter", query: "Biggs+Darklighter", code: "sw0009", price: "£7.00+", note: "Rebel pilot" },
+                { name: "Jyn Erso", query: "Jyn+Erso", code: "sw0791", price: "£7.00+", note: "Resistance fighter" },
+                { name: "Cassian Andor", query: "Cassian+Andor", code: "sw0790", price: "£7.50+", note: "Rebel commander" },
+                { name: "K-2SO", query: "K-2SO", code: "sw0782", price: "£8.50+", note: "Droid companion" },
+                { name: "Bodhi Rook", query: "Bodhi+Rook", code: "sw0794", price: "£7.00+", note: "Defector pilot" },
+                { name: "Poe Dameron", query: "Poe+Dameron", code: "sw0737", price: "£6.00+", note: "Resistance pilot" },
+                { name: "Rey", query: "Rey", code: "sw0677", price: "£5.50+", note: "Scavenger/Fighter" }
             ],
             "Set 10: Outer Rim Cantina": [
-                { name: "Han Solo (Smuggler)", query: "Han+Solo", price: "£6.50+", note: "DIFERIT de Han standard" },
-                { name: "Lando (Smuggler)", query: "Lando+Calrissian", price: "£7.00+", note: "DIFERIT de Lando diplomat" },
-                { name: "Greedo", query: "Greedo", price: "£4.50+", note: "Rodian bounty" },
-                { name: "Jabba the Hutt", query: "Jabba+the+Hutt", price: "£12.00+", note: "Crime lord huge" },
-                { name: "Salacious Crumb", query: "Salacious+Crumb", price: "£8.00+", note: "Jabba's pet" },
-                { name: "Ewok Wicket", query: "Wicket", price: "£9.00+", note: "Forest warrior" },
-                { name: "Ewok Logray", query: "Logray", price: "£9.50+", note: "Medicine man" },
-                { name: "Admiral Ackbar", query: "Admiral+Ackbar", price: "£7.50+", note: "Mon Calamari leader" },
-                { name: "Nien Nunb", query: "Nien+Nunb", price: "£6.50+", note: "Co-pilot Lando" }
+                { name: "Han Solo (Smuggler)", query: "Han+Solo", code: "sw0771", price: "£6.50+", note: "DIFERIT de Han standard" },
+                { name: "Lando (Smuggler)", query: "Lando+Calrissian", code: "sw0398", price: "£7.00+", note: "DIFERIT de Lando diplomat" },
+                { name: "Greedo", query: "Greedo", code: "sw0110", price: "£4.50+", note: "Rodian bounty" },
+                { name: "Jabba the Hutt", query: "Jabba+the+Hutt", code: "sw0071", price: "£12.00+", note: "Crime lord huge" },
+                { name: "Salacious Crumb", query: "Salacious+Crumb", code: "sw0408", price: "£8.00+", note: "Jabba's pet" },
+                { name: "Ewok Wicket", query: "Wicket", code: "sw0237", price: "£9.00+", note: "Forest warrior" },
+                { name: "Ewok Logray", query: "Logray", code: "sw0338", price: "£9.50+", note: "Medicine man" },
+                { name: "Admiral Ackbar", query: "Admiral+Ackbar", code: "sw0247", price: "£7.50+", note: "Mon Calamari leader" },
+                { name: "Nien Nunb", query: "Nien+Nunb", code: "sw1372", price: "£6.50+", note: "Co-pilot Lando" }
             ]
         };
 
@@ -383,12 +390,16 @@
 
                 let html = `<h2 class="set-title">${setName}</h2>`;
                 html += '<div class="table-container"><table>';
-                html += '<tr><th>Personaj</th><th>Preț</th><th>BrickLink</th><th>Notă</th></tr>';
+                html += '<tr><th>Personaj</th><th>Cod</th><th>Preț</th><th>BrickLink</th><th>Notă</th></tr>';
 
                 characters.forEach(char => {
-                    const brickLinkUrl = `https://www.bricklink.com/v2/search.page?q=${char.query}+minifigure`;
+                    const brickLinkUrl = char.code
+                        ? `https://www.bricklink.com/v2/catalog/catalogitem.page?M=${char.code}`
+                        : `https://www.bricklink.com/v2/search.page?q=${char.query}+minifigure`;
+                    const codeCell = char.code ? char.code : 'N/A';
                     html += `<tr>
                         <td class="character-name">${char.name}</td>
+                        <td class="code">${codeCell}</td>
                         <td class="price">${char.price}</td>
                         <td><a href="${brickLinkUrl}" target="_blank" class="bricklink-btn">🔗 BrickLink</a></td>
                         <td class="note">${char.note}</td>
